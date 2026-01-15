@@ -4,8 +4,8 @@ class UiUpdatesDemo extends StatefulWidget {
   const UiUpdatesDemo({super.key});
 
   @override
-  StatefulElement CreateElement() {
-    print('Create Element Called');
+  StatefulElement createElement() {
+    debugPrint('Create Element Called');
     return super.createElement();
   }
 
@@ -17,7 +17,7 @@ class _UiUpdatesDemoState extends State<UiUpdatesDemo> {
   var _isUnderStood = false;
   @override
   Widget build(BuildContext context) {
-    print('build method called');
+    debugPrint('build method called');
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
