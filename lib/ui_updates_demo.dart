@@ -1,67 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_internals/build_buttons.dart';
 
-class UiUpdatesDemo extends StatefulWidget {
+class UiUpdatesDemo extends StatelessWidget {
   const UiUpdatesDemo({super.key});
 
   @override
-  StatefulElement createElement() {
-    debugPrint('Create Element Called');
-    return super.createElement();
-  }
-
-  @override
-  State<UiUpdatesDemo> createState() => _UiUpdatesDemoState();
-}
-
-class _UiUpdatesDemoState extends State<UiUpdatesDemo> {
-  var _isUnderStood = false;
-  @override
   Widget build(BuildContext context) {
-    debugPrint('build method called');
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'Every Flutter developer should have a basic understanding of Flutter\'s internals!',
               textAlign: TextAlign.center,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
+            SizedBox(
               height: 16,
             ),
-            const Text(
+            Text(
               'Do you understand how Flutter updates UIs ?',
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
+            SizedBox(
               height: 16,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      _isUnderStood = false;
-                    });
-                  },
-                  child: const Text('No'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      _isUnderStood = true;
-                    });
-                  },
-                  child: const Text('Yes'),
-                ),
-              ],
-            ),
-            if (_isUnderStood) const Text('Awsome!'),
+            Fixt(),
           ],
         ),
       ),
